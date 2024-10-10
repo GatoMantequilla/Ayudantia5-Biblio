@@ -8,17 +8,15 @@ public class Libro {
     private int cantidadDisponible;
     private boolean disponible;
 
-    // Constructor
     public Libro(String titulo, String autor, String genero, String ISBN, int cantidadDisponible) {
         this.titulo = titulo;
         this.autor = autor;
         this.genero = genero;
         this.ISBN = ISBN;
         this.cantidadDisponible = cantidadDisponible;
-        this.disponible = cantidadDisponible > 0;  // Initial availability is based on copies available
+        this.disponible = cantidadDisponible > 0; 
     }
 
-    // Métodos privados
     private void prestar() {
         if (cantidadDisponible > 0) {
             cantidadDisponible--;
@@ -32,7 +30,7 @@ public class Libro {
 
     private void devolver() {
         cantidadDisponible++;
-        disponible = true; // If any copies are returned, the book becomes available
+        disponible = true;
     }
 
     private void mostrarInfo() {
@@ -43,8 +41,7 @@ public class Libro {
         System.out.println("Cantidad disponible: " + cantidadDisponible);
         System.out.println("Disponible: " + (disponible ? "Sí" : "No"));
     }
-
-    // Métodos públicos que exponen la funcionalidad privada
+    
     public void prestarLibro() {
         prestar();
     }
@@ -57,7 +54,6 @@ public class Libro {
         mostrarInfo();
     }
 
-    // Getters y Setters (pueden ser públicos para acceder a los atributos si es necesario)
     public String getTitulo() {
         return titulo;
     }
